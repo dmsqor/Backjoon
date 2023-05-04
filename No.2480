@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main{
+    
+    public static int choose_number(int a, int b, int c){
+    if(a>b && a>c){
+        return a;
+    }else if(b>a && b>c){
+        return b;
+    }else return c;
+    }
+    
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        int b = input.nextInt();
+        int c = input.nextInt();
+        int money = 0;
+        int same;
+        
+        if(a==b && b==c){
+            money = 10000 + a*1000;
+            System.out.println(money);
+        }else if(a==b || b==c || c==a){
+            if(a==b) same = a;
+            else same = c;
+            money = 1000 + same*100;
+            System.out.println(money);
+        }else{
+            money = choose_number(a,b,c)*100;
+            System.out.println(money);
+        }
+        
+        input.close();
+    }
+}
