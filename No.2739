@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+    public void mul(int a){
+        for(int i = 1; i<10; i++){
+            System.out.printf("%d * %d = %d%n", a, i, a*i);
+        }
+    }
+    
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        Main result = new Main();
+        
+        result.mul(a);
+    }
+}
