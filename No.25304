@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+
+public class Main{
+    public static int sum = 0;
+
+    public static void calculate_price(int product, int num){
+        for(int i = 1; i<=num; i++){
+            sum += product;
+        }
+    }
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int price = input.nextInt();
+        int n = input.nextInt();
+        for(int i = 1; i <= n; i++){
+            int product = input.nextInt();
+            int num = input.nextInt();
+            calculate_price(product, num);
+        }
+        if(price == sum){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+    }
+}
