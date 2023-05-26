@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Main {
+	
+    public static int[] change(int[] arr, int a, int b){
+        int num;
+        int n = 1;
+        for(int i = a-1; i<b; i++){
+        	if(i > b-n) break;
+            num = arr[i];
+            arr[i] = arr[b-n];
+            arr[b-n] = num;
+            n += 1;
+        }
+        return arr;
+    }
+    
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int m = input.nextInt();
+        
+        int[] arr = new int[n];
+        for(int i = 0; i<n; i++){
+            arr[i] = i+1;
+        }
+        
+        for(int i = 0; i<m; i++){
+            int a = input.nextInt();
+            int b = input.nextInt();
+            arr = change(arr, a, b);
+        }
+        
+        for(int i = 0; i<n; i++) {
+            System.out.printf("%d ", arr[i]);
+        }
+
+        input.close();
+    }
+}
