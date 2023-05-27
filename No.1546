@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+
+public class Main{
+    public static double[] change(int[] arr, int n){
+    int num;
+    double[] arr2 = new double[n];
+    for(int i = 0; i<n; i++){
+        for(int j = i; j<n; j++){
+            if(arr[i]>=arr[j]){
+                num = arr[i];
+                arr[i] = arr[j];
+                arr[j] = num;
+                arr2[i] = (double)arr[i]; 
+            }
+        }
+    }
+    
+    return arr2;
+    }
+
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0; i<n; i++){
+            arr[i] = input.nextInt();
+        }
+        input.close();
+        double[] arr2 = new double[n];
+        arr2 = change(arr, n);
+        double sum = 0;
+        for(int i = 0; i<n; i++){
+            arr2[i] = arr2[i]/arr2[n-1]*100;
+            sum += arr2[i];
+        }
+        
+        System.out.println(sum/n);
+    }
+}
