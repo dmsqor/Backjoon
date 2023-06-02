@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        String a = input.next();
+        String b = input.next();
+        int result=0;
+        
+        for(int i = 2; i>=0; i--) {
+        	if(a.charAt(i) > b.charAt(i)) {
+        		result = 1;
+        		break;
+        	}else if(a.charAt(i) < b.charAt(i)){
+        		result = 2;
+        		break;
+        	}
+        }
+        
+        if(result == 1) {
+        	for(int i = 2; i>=0; i--) {
+        		System.out.printf("%c", a.charAt(i));
+        	}
+        }else {
+        	for(int i = 2; i>=0; i--) {
+        		System.out.printf("%c", b.charAt(i));
+        	}
+        }
+        input.close();
+    }
+}
