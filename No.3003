@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main {
+	
+    public static void main(String[] args){
+    	Scanner input = new Scanner(System.in);
+    	int[] right = {1,1,2,2,2,8};
+    	int[] piece = new int[6];
+    	for(int i = 0; i<6; i++) {
+    		piece[i] = input.nextInt();
+    		System.out.printf("%d ", right[i]-piece[i]);
+    	}
+    	input.close();
+    }
+}
