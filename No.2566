@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		int max = 0;
+		int raw = 0;
+		int gid = 0;
+		
+		int[][] arr1 = new int[9][9];
+		
+		for(int i = 0; i<9; i++) {
+			for(int j = 0; j<9; j++) {
+				arr1[i][j] = input.nextInt();
+				if(arr1[i][j] >= max) {
+					max = arr1[i][j];
+					gid = i+1;
+					raw = j+1;
+				}
+			}
+		}
+		
+		System.out.println(max);
+		System.out.printf("%d %d", gid, raw);
+		
+		input.close();
+	}
+}
