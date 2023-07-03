@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+import java.util.ArrayList;
+import java.math.*;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		int max = 6;
+		int count = 0;
+		while(n!=0){
+			for(int i = max; i>=0; i--) {
+				if((int)Math.pow(2, i) <= n) {
+					max = i;
+					n -= (int)Math.pow(2, i);
+					count += 1;
+					break;
+				}
+			}	
+		}
+		input.close();
+		System.out.println(count);
+		
+		
+	}
+}
